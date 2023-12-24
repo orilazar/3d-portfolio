@@ -1,15 +1,21 @@
 import { Link } from "react-router-dom";
 
 import { arrow } from "../assets/icons";
+import { FaInfoCircle } from "react-icons/fa";
 
 const HomeInfo = ({ currentStage }) => {
   if (currentStage === 1)
     return (
       <h1 className="sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5">
         Hi, I'm
-        <span className="font-semibold mx-2 text-white">Ori</span>
+        <span className="font-bold mx-2 text-white">Ori</span>
         👋
-        <br />A Software Engineer from Israel 🇮🇱
+        <br />A Software Developer
+        <br />
+        <p className="flex items-center text-sky-800 font-poppins font-semibold text-sm mt-1">
+          <FaInfoCircle className="mr-1" />
+          Drag around to read more
+        </p>
       </h1>
     );
 
@@ -54,7 +60,7 @@ const HomeInfo = ({ currentStage }) => {
         </p>
 
         <Link to="/contact" className="neo-brutalism-white neo-btn">
-          Let's talk
+          Let's talk!
           <img src={arrow} alt="arrow" className="w-4 h-4 object-contain" />
         </Link>
       </div>

@@ -14,6 +14,8 @@ import {
   golang,
   idf,
   rafael,
+  adobexd,
+  uxui,
 } from "../assets/images";
 import {
   car,
@@ -168,6 +170,8 @@ export const categories = [
         knowledge: 2,
       },
       { name: "WPF", image: wpf, knowledge: 2 },
+      { name: "Adobe XD", image: adobexd, knowledge: 0 },
+      { name: "UI/UX", image: uxui, knowledge: 0 },
     ],
   },
 ];
@@ -177,12 +181,10 @@ export const experiences = [
     title: "Software Developer",
     company_name: "IDF",
     icon: idf,
-    iconBg: "#fff6aa",
+    iconBg: "#788044",
     date: "April 2021 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Developing and maintaining a fullstack desktop application, using WPF, Python and MongoDB.",
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
   },
@@ -193,10 +195,7 @@ export const experiences = [
     iconBg: "#a2d2ff",
     date: "August 2019 - April 2021",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developing and maintaining a fullstack web application using React.js, Node and PosgreSQL.",
     ],
   },
 ];

@@ -4,12 +4,6 @@ import Loader from "./Loader";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import HomeInfo from "./HomeInfo";
+import BrightnessEffect from "./BrightnessEffect";
 
-export {
-    CTA,
-    Alert,
-    Loader,
-    Navbar,
-    Footer,
-    HomeInfo
-}
+export { BrightnessEffect, CTA, Alert, Loader, Navbar, Footer, HomeInfo };

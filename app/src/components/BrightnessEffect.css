@@ -1,0 +1,6 @@
+.brightness-effect {
+  position: absolute;
+  /* box-shadow: 0 0 100em 5em #1462d822; */
+  box-shadow: 0 0 100em 5em #04152d;
+  mix-blend-mode: screen; /* Add this line for a blending effect */
+}

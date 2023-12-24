@@ -11,7 +11,7 @@ const Footer = () => {
       <hr className="border-slate-500" />
 
       <div className="footer-container">
-        <p className="font-semibold text-slate-100">Let's talk</p>
+        <p className="font-semibold text-slate-100">Let's talk!</p>
 
         <div className="flex gap-3 justify-center items-center">
           {location.pathname !== "/contact" ? (

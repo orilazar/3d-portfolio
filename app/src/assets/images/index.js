@@ -16,8 +16,12 @@ import python from "./python.png";
 import golang from "./golang.png";
 import idf from "./idf.png";
 import rafael from "./rafael.png";
+import adobexd from "./adobexd.png";
+import uxui from "./uxui.png";
 
 export {
+  adobexd,
+  uxui,
   idf,
   rafael,
   golang,

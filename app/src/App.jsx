@@ -1,13 +1,14 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import { Footer, Navbar } from "./components";
-import { About, Contact, Home, Projects } from "./pages";
+import { About, Contact, Home } from "./pages";
 import { ChakraProvider } from "@chakra-ui/react";
 
 const App = () => {
   return (
     <ChakraProvider>
       <main className="bg-slate-800">
+        {/* <BrightnessEffect /> */}
         <Router>
           <Navbar />
           <Routes>
