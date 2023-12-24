@@ -170,7 +170,7 @@ export const categories = [
         knowledge: 2,
       },
       { name: "WPF", image: wpf, knowledge: 2 },
-      { name: "Adobe XD", image: adobexd, knowledge: 0 },
+      { name: "Adobe Xd", image: adobexd, knowledge: 0 },
       { name: "UI/UX", image: uxui, knowledge: 0 },
     ],
   },

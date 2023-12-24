@@ -14,8 +14,6 @@ import "react-vertical-timeline-component/style.min.css";
 import {
   PopoverArrow,
   PopoverBody,
-  PopoverCloseButton,
-  PopoverHeader,
   Box,
   HStack,
   CircularProgress,
@@ -25,6 +23,7 @@ import {
   PopoverTrigger,
 } from "@chakra-ui/react";
 import { FaInfoCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -39,16 +38,24 @@ const About = () => {
       <div className="mt-5 flex flex-col gap-3 text-slate-300">
         <p>
           Software Developer from Israel, specializing in web development,
-          Python and C#.
+          Python and C#.{" "}
+          <Link
+            to="/contacta"
+            className="text-blue-400 font-poppins font-semibold text-lg cursor-pointer block"
+          >
+            Full CV
+          </Link>
         </p>
       </div>
 
       <div className="py-10 flex flex-col">
         <div className="flex items-baseline">
-          <h3 className="subhead-text">My Skills</h3>
-          <p className="ml-4 text-slate-500 flex items-center">
-            Press for more info <FaInfoCircle className="ml-2" />
-          </p>
+          <div className="flex items-baseline">
+            <h3 className="subhead-text">My Skills</h3>
+            <p className="ml-4 text-slate-500 flex items-center flex-grow-1">
+              Press for more info <FaInfoCircle className="ml-2" />
+            </p>
+          </div>
         </div>
 
         <div className="mt-8 flex flex-col flex-wrap gap-8">
@@ -127,7 +134,7 @@ const About = () => {
         <h3 className="subhead-text">Work Experience.</h3>
         <div className="mt-5 flex flex-col gap-3 text-slate-300">
           <p>
-            I've worked with all sorts of companies, leveling up my skills and
+            I've worked for different companies, leveling up my skills and
             teaming up with smart people. Here's the rundown:
           </p>
         </div>

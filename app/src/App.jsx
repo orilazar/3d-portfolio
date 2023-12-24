@@ -1,7 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import { Footer, Navbar } from "./components";
-import { About, Contact, Home } from "./pages";
+import { About, Contact, Home, NotFound } from "./pages";
 import { ChakraProvider } from "@chakra-ui/react";
 
 const App = () => {
@@ -21,6 +21,8 @@ const App = () => {
                     <Route path="/about" element={<About />} />
                     {/* <Route path="/projects" element={<Projects />} /> */}
                     <Route path="/contact" element={<Contact />} />
+
+                    <Route path="/*" element={<NotFound />} />
                   </Routes>
                   <Footer />
                 </>

@@ -8,6 +8,16 @@ img {
   -webkit-user-drag: none;
 }
 
+/* For Webkit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  @apply w-3 bg-slate-600;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply w-3 bg-slate-400 rounded-xl;
+  box-shadow: 0 0 10em 3em black;
+}
+
 :root {
   --blue-rgb: 237 245 255;
   --green-rgb: 125 161 35;
