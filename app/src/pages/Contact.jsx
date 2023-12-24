@@ -31,9 +31,9 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: "JavaScript Mastery",
+          to_name: "Ori Lazarovitch",
           from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
+          to_email: "ori10122001+contact-through-portfolio@gmail.com",
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
@@ -67,29 +67,33 @@ const Contact = () => {
             text: "I didn't receive your message 😢",
             type: "danger",
           });
+          setTimeout(() => {
+            hideAlert(false);
+            setCurrentAnimation("idle");
+          }, [3000]);
         }
       );
   };
 
   return (
-    <section className='relative flex lg:flex-row flex-col max-container'>
+    <section className="relative flex lg:flex-row flex-col max-container">
       {alert.show && <Alert {...alert} />}
 
-      <div className='flex-1 min-w-[50%] flex flex-col'>
-        <h1 className='head-text'>Get in Touch</h1>
+      <div className="flex-1 min-w-[50%] flex flex-col dark">
+        <h1 className="head-text">Get in Touch</h1>
 
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className='w-full flex flex-col gap-7 mt-14'
+          className="w-full flex flex-col gap-7 mt-14"
         >
-          <label className='text-black-500 font-semibold'>
+          <label className="text-slate-200 font-semibold">
             Name
             <input
-              type='text'
-              name='name'
-              className='input'
-              placeholder='John'
+              type="text"
+              name="name"
+              className="mt-2 bg-slate-700 border border-gray-400 text-slate-100 text-sm rounded-lg focus:border-gray-200 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+              placeholder="Enter your name"
               required
               value={form.name}
               onChange={handleChange}
@@ -97,13 +101,13 @@ const Contact = () => {
               onBlur={handleBlur}
             />
           </label>
-          <label className='text-black-500 font-semibold'>
+          <label className="text-slate-200 font-semibold">
             Email
             <input
-              type='email'
-              name='email'
-              className='input'
-              placeholder='John@gmail.com'
+              type="email"
+              name="email"
+              className="mt-2 bg-slate-700 border border-gray-400 text-slate-100 text-sm rounded-lg focus:border-gray-200 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+              placeholder="Enter your email"
               required
               value={form.email}
               onChange={handleChange}
@@ -111,13 +115,13 @@ const Contact = () => {
               onBlur={handleBlur}
             />
           </label>
-          <label className='text-black-500 font-semibold'>
+          <label className="text-slate-200 font-semibold">
             Your Message
             <textarea
-              name='message'
-              rows='4'
-              className='textarea'
-              placeholder='Write your thoughts here...'
+              name="message"
+              rows="4"
+              className="mt-2 bg-slate-700 border border-gray-400 text-slate-100 text-sm rounded-lg focus:border-gray-200 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+              placeholder="Write your message here"
               value={form.message}
               onChange={handleChange}
               onFocus={handleFocus}
@@ -126,9 +130,9 @@ const Contact = () => {
           </label>
 
           <button
-            type='submit'
+            type="submit"
             disabled={loading}
-            className='btn'
+            className="btn"
             onFocus={handleFocus}
             onBlur={handleBlur}
           >
@@ -137,30 +141,23 @@ const Contact = () => {
         </form>
       </div>
 
-      <div className='lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]'>
+      <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
         <Canvas
           camera={{
             position: [0, 0, 5],
-            fov: 75,
+            fov: 65,
             near: 0.1,
             far: 1000,
           }}
         >
-          <directionalLight position={[0, 0, 1]} intensity={2.5} />
-          <ambientLight intensity={1} />
-          <pointLight position={[5, 10, 0]} intensity={2} />
-          <spotLight
-            position={[10, 10, 10]}
-            angle={0.15}
-            penumbra={1}
-            intensity={2}
-          />
+          <directionalLight position={[0, 0, 1]} intensity={2} />
+          <ambientLight intensity={0.3} />
 
           <Suspense fallback={<Loader />}>
             <Fox
               currentAnimation={currentAnimation}
-              position={[0.5, 0.35, 0]}
-              rotation={[12.629, -0.6, 0]}
+              position={[0.5, 0.5, 0.1]}
+              rotation={[12.65, -0.7, 0]}
               scale={[0.5, 0.5, 0.5]}
             />
           </Suspense>

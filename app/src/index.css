@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: "Work Sans", sans-serif;
+  font-family: "Inter";
 }
 
 body:has(.card[data-color="blue"]:hover) {
@@ -27,15 +27,15 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .head-text {
-    @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins;
+    @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins text-slate-200;
   }
 
   .subhead-text {
-    @apply font-semibold sm:text-3xl text-xl relative font-poppins;
+    @apply font-semibold sm:text-3xl text-xl relative font-poppins text-slate-200;
   }
 
   .blue-gradient_text {
-    @apply bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[#00d6dd] to-[#00a2ee] bg-clip-text text-transparent;
   }
 
   .input {
@@ -47,7 +47,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .btn {
-    @apply text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center;
+    @apply text-white bg-gradient-to-r from-[#00d6dd] to-[#00a2ee] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center;
   }
 
   .header {
@@ -97,7 +97,7 @@ body:has(.card[data-color="green"]:hover) {
 .block-container {
   position: relative;
   transition: 250ms;
-  perspective: 500px;
+  perspective: 30em;
 }
 
 .block-container .btn-back {
@@ -109,9 +109,9 @@ body:has(.card[data-color="green"]:hover) {
   transition: 250ms;
   transform-style: preserve-3d;
   transform-origin: bottom right;
-  transform: rotateZ(15deg);
+  transform: rotateZ(10deg);
   will-change: transform;
-  box-shadow: 16px 0 40px #e4e4e4;
+  box-shadow: 0.5em 0 1.5em #ffffff44;
 }
 
 .block-container .btn-back-red {
@@ -148,7 +148,7 @@ body:has(.card[data-color="green"]:hover) {
   z-index: 1;
   width: inherit;
   height: inherit;
-  background-color: #ffffff33;
+  background-color: #ffffffcf;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   transition: 250ms;
@@ -158,20 +158,20 @@ body:has(.card[data-color="green"]:hover) {
 }
 
 .block-container:hover > .btn-back {
-  transform: translateZ(20px) rotateZ(15deg) rotateX(-20deg) rotateY(-20deg);
+  transform: translateZ(2em) rotateZ(20deg) rotateX(-20deg) rotateY(-20deg);
 }
 
 .block-container:hover > .btn-front {
-  transform: translateZ(80px) translateY(-5px) rotateX(15deg) rotateY(15deg);
+  transform: translateZ(4em) translateY(-0.4em) rotateX(10deg) rotateY(10deg);
 }
 
 /* Neo Brutalism */
 .neo-brutalism-blue {
-  background: #2b77e7;
+  background: #00a2ee;
   position: relative;
   border-radius: 10px;
-  border: #2b77e7;
-  box-shadow: 0.6vmin 0.6vmin #336cc1, 1vmin 1vmin #0092db, 1vmin 1vmin #0092db,
+  border: #24baff solid 0.1em;
+  box-shadow: 0.6vmin 0.6vmin #0a86c0, 1vmin 1vmin #00a2ee, 1vmin 1vmin #0092db,
     0.65vmin 1vmin #0092db, 1vmin 0.65vmin #0092db;
 }
 
