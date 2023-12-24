@@ -23,7 +23,7 @@ body:has(.card[data-color="green"]:hover) {
 
 @layer utilities {
   .max-container {
-    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
+    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[6em] px-8 min-h-[calc(100vh-80px)];
   }
 
   .head-text {
@@ -111,7 +111,7 @@ body:has(.card[data-color="green"]:hover) {
   transform-origin: bottom right;
   transform: rotateZ(10deg);
   will-change: transform;
-  box-shadow: 0.5em 0 1.5em #ffffff44;
+  box-shadow: 0.5em 0 1em #ffffff26;
 }
 
 .block-container .btn-back-red {
@@ -142,13 +142,17 @@ body:has(.card[data-color="green"]:hover) {
   background: linear-gradient(135deg, #0a1647 -20%, #e4e7e4 120%);
 }
 
+.block-container .btn-back-whole-black {
+  background: linear-gradient(135deg, #151719 -20%, #264258 120%);
+}
+
 .block-container .btn-front {
   position: absolute;
   inset: 0;
   z-index: 1;
   width: inherit;
   height: inherit;
-  background-color: #ffffffcf;
+  background-color: #ffffff26;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   transition: 250ms;
@@ -162,7 +166,7 @@ body:has(.card[data-color="green"]:hover) {
 }
 
 .block-container:hover > .btn-front {
-  transform: translateZ(4em) translateY(-0.4em) rotateX(10deg) rotateY(10deg);
+  transform: translateZ(6em) translateY(-0.4em) rotateX(10deg) rotateY(15deg);
 }
 
 /* Neo Brutalism */

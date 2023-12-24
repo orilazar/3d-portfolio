@@ -1,4 +1,18 @@
-import { meta, shopify, starbucks, tesla, linkedIn } from "../assets/images";
+import {
+  meta,
+  shopify,
+  starbucks,
+  tesla,
+  linkedIn,
+  postgresql,
+  wpf,
+  gitlab,
+  solid,
+  csharp,
+  python,
+  cplusplus,
+  golang,
+} from "../assets/images";
 import {
   car,
   contact,
@@ -105,6 +119,54 @@ export const skills = [
     imageUrl: typescript,
     name: "TypeScript",
     type: "Frontend",
+  },
+];
+
+const KnowledgeLevelStrings = ["Beginner", "Advanced", "Expert"];
+export const KnowledgeLevelToString = (knowledgeLevel) =>
+  KnowledgeLevelStrings[knowledgeLevel];
+
+export const categories = [
+  {
+    name: "Programming Languages",
+    items: [
+      { name: "C# + .NET", image: csharp, knowledge: 2 },
+      { name: "Python", image: python, knowledge: 1 },
+      { name: "C++", image: cplusplus, knowledge: 0 },
+      { name: "GoLang", image: golang, knowledge: 0 },
+    ],
+  },
+  {
+    name: "Web Development",
+    items: [
+      { name: "HTML", image: html, knowledge: 2 },
+      { name: "CSS", image: css, knowledge: 2 },
+      { name: "JavaScript", image: javascript, knowledge: 2 },
+      { name: "TypeScript", image: typescript, knowledge: 2 },
+      { name: "React", image: react, knowledge: 2 },
+      { name: "Tailwind", image: tailwindcss, knowledge: 1 },
+      { name: "Node", image: nodejs, knowledge: 1 },
+    ],
+  },
+  {
+    name: "DBs",
+    items: [
+      { name: "MongoDB", image: mongodb, knowledge: 1 },
+      { name: "PostgreSQL", image: postgresql, knowledge: 0 },
+    ],
+  },
+  {
+    name: "Others",
+    items: [
+      { name: "Git", image: git, knowledge: 2 },
+      { name: "Gitlab", image: gitlab, knowledge: 2 },
+      {
+        name: "SOLID Design Principles",
+        image: solid,
+        knowledge: 2,
+      },
+      { name: "WPF", image: wpf, knowledge: 2 },
+    ],
   },
 ];
 

@@ -3,10 +3,16 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 
-import { CTA } from "../components";
-import { experiences, skills } from "../constants";
+import {
+  experiences,
+  skills,
+  categories,
+  KnowledgeLevelToString,
+} from "../constants";
 
 import "react-vertical-timeline-component/style.min.css";
+import { Tooltip, Box, HStack, CircularProgress, Text } from "@chakra-ui/react";
+import { FaInfoCircle } from "react-icons/fa";
 
 const About = () => {
   return (
@@ -26,18 +32,76 @@ const About = () => {
       </div>
 
       <div className="py-10 flex flex-col">
-        <h3 className="subhead-text">My Skills</h3>
+        <div className="flex items-baseline">
+          <h3 className="subhead-text">My Skills</h3>
+          <p className="ml-4 text-slate-500 flex items-center">
+            Hover for more info <FaInfoCircle className="ml-2" />
+          </p>
+        </div>
 
-        <div className="mt-16 flex flex-wrap gap-12">
-          {skills.map((skill) => (
-            <div className="block-container w-20 h-20" key={skill.name}>
-              <div className="btn-back rounded-xl" />
-              <div className="btn-front rounded-xl flex justify-center items-center">
-                <img
-                  src={skill.imageUrl}
-                  alt={skill.name}
-                  className="w-1/2 h-1/2 object-contain"
-                />
+        <div className="mt-8 flex flex-col flex-wrap gap-8">
+          {categories.map((category) => (
+            <div key={category.name} className="text-slate-300">
+              <p className="mb-6 font-semibold font-poppins">{category.name}</p>
+              <div
+                key={category.name}
+                className="flex flex-wrap gap-3 text-slate-300"
+              >
+                {category.items.map((skill) => (
+                  <Tooltip
+                    className="p-2 m-[-0.5em]"
+                    key={skill.name}
+                    hasArrow
+                    label={
+                      <Box
+                        display={"flex"}
+                        flexDirection={"column"}
+                        alignItems="center"
+                      >
+                        <Text
+                          fontSize={"small"}
+                          fontWeight="bold"
+                          mb={2}
+                          className="text-slate-100"
+                        >
+                          {skill.name}
+                        </Text>
+                        <HStack>
+                          <Text className="text-slate-300">
+                            {KnowledgeLevelToString(skill.knowledge)}
+                          </Text>
+
+                          <CircularProgress
+                            color="#444"
+                            trackColor="#00d0d8"
+                            thickness={12}
+                            size={"1.25em"}
+                            value={85 - (skill.knowledge + 1) * 25}
+                          />
+                        </HStack>
+                      </Box>
+                    }
+                    background={"#001020"}
+                    borderRadius={8}
+                  >
+                    <div
+                      className="block-container w-20 h-20 mx-3"
+                      key={skill.name}
+                    >
+                      <div className="btn-back btn-back-whole-black rounded-xl" />
+                      <div
+                        className="btn-front rounded-xl flex justify-center items-center"
+                        style={{ boxShadow: "0.5em 1em 1em #00000044" }}
+                      >
+                        <img
+                          src={skill.image}
+                          alt={skill.name}
+                          className="w-2/3 h-2/3 object-contain rounded-xl"
+                        />
+                      </div>
+                    </div>
+                  </Tooltip>
+                ))}
               </div>
             </div>
           ))}
@@ -71,7 +135,6 @@ const About = () => {
                 }
                 contentArrowStyle={{
                   borderRightColor: "#ffffff22",
-                  transform: "scale(1.6, 1.6) translate(-2.5px, 1px)",
                 }}
                 contentStyle={{
                   borderBottom: "0.5em",
