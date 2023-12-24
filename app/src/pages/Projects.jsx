@@ -62,8 +62,6 @@ const Projects = () => {
       </div>
 
       <hr className="border-slate-500" />
-
-      <CTA />
     </section>
   );
 };
