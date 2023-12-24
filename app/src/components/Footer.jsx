@@ -15,8 +15,11 @@ const Footer = () => {
 
         <div className="flex gap-3 justify-center items-center">
           {location.pathname !== "/contact" ? (
-            <Link to="/contact" className="btn">
-              Contact
+            <Link
+              to="/contact"
+              className="btn h-9 rounded-xl items-center flex"
+            >
+              <p className="font-semibold">Contact</p>
             </Link>
           ) : null}
           {socialLinks.map((link) => (
