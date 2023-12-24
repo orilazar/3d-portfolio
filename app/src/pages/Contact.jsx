@@ -80,7 +80,10 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative flex lg:flex-row flex-col max-container">
+    <section
+      className="relative flex lg:flex-row flex-col max-container"
+      style={{ paddingBottom: "5em" }}
+    >
       <div className="flex-1 min-w-[50%] flex flex-col dark">
         <h1 className="head-text">Get in Touch</h1>
 
