@@ -79,7 +79,7 @@ const About = () => {
                         </Box>
                       </PopoverTrigger>
                       <PopoverContent
-                        style={{ borderRadius: "0.8em" }}
+                        style={{ borderRadius: "0.8em", width: "fit-content" }}
                         focusBorderColor="transparent" // Set focus border color to transparent
                         _focus={{ boxShadow: "none" }}
                       >
@@ -94,20 +94,20 @@ const About = () => {
                               fontSize={"small"}
                               fontWeight="bold"
                               mb={2}
-                              className="text-slate-100"
+                              className="text-slate-100 font-poppins"
                             >
                               {skill.name}
                             </Text>
                             <HStack>
-                              <Text className="text-slate-300">
+                              <Text className="text-slate-300 font-poppins">
                                 {KnowledgeLevelToString(skill.knowledge)}
                               </Text>
 
                               <CircularProgress
-                                color="#444"
-                                trackColor="#00d0d8"
-                                thickness={12}
-                                size={"1.25em"}
+                                color="#222"
+                                trackColor="#11c0d8"
+                                thickness={18}
+                                size={"1.2em"}
                                 value={85 - (skill.knowledge + 1) * 25}
                               />
                             </HStack>
