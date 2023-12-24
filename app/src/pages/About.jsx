@@ -11,7 +11,19 @@ import {
 } from "../constants";
 
 import "react-vertical-timeline-component/style.min.css";
-import { Tooltip, Box, HStack, CircularProgress, Text } from "@chakra-ui/react";
+import {
+  PopoverArrow,
+  PopoverBody,
+  PopoverCloseButton,
+  PopoverHeader,
+  Box,
+  HStack,
+  CircularProgress,
+  Text,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@chakra-ui/react";
 import { FaInfoCircle } from "react-icons/fa";
 
 const About = () => {
@@ -35,7 +47,7 @@ const About = () => {
         <div className="flex items-baseline">
           <h3 className="subhead-text">My Skills</h3>
           <p className="ml-4 text-slate-500 flex items-center">
-            Hover for more info <FaInfoCircle className="ml-2" />
+            Press for more info <FaInfoCircle className="ml-2" />
           </p>
         </div>
 
@@ -48,59 +60,62 @@ const About = () => {
                 className="flex flex-wrap gap-3 text-slate-300"
               >
                 {category.items.map((skill) => (
-                  <Tooltip
-                    className="p-2 m-[-0.5em]"
+                  <div
+                    className="block-container w-20 h-20 mx-3"
                     key={skill.name}
-                    hasArrow
-                    label={
-                      <Box
-                        display={"flex"}
-                        flexDirection={"column"}
-                        alignItems="center"
-                      >
-                        <Text
-                          fontSize={"small"}
-                          fontWeight="bold"
-                          mb={2}
-                          className="text-slate-100"
-                        >
-                          {skill.name}
-                        </Text>
-                        <HStack>
-                          <Text className="text-slate-300">
-                            {KnowledgeLevelToString(skill.knowledge)}
-                          </Text>
-
-                          <CircularProgress
-                            color="#444"
-                            trackColor="#00d0d8"
-                            thickness={12}
-                            size={"1.25em"}
-                            value={85 - (skill.knowledge + 1) * 25}
-                          />
-                        </HStack>
-                      </Box>
-                    }
-                    background={"#001020"}
-                    borderRadius={8}
                   >
-                    <div
-                      className="block-container w-20 h-20 mx-3"
-                      key={skill.name}
-                    >
-                      <div className="btn-back btn-back-whole-black rounded-xl" />
-                      <div
-                        className="btn-front rounded-xl flex justify-center items-center"
-                        style={{ boxShadow: "0.5em 1em 1em #00000044" }}
+                    <div className="btn-back btn-back-whole-black rounded-xl" />
+                    <Popover placement="top">
+                      <PopoverTrigger>
+                        <Box
+                          className="btn-front rounded-xl flex justify-center items-center"
+                          boxShadow="0.5em 1em 1em #00000044"
+                        >
+                          <img
+                            src={skill.image}
+                            alt={skill.name}
+                            className="w-2/3 h-2/3 object-contain rounded-xl"
+                          />
+                        </Box>
+                      </PopoverTrigger>
+                      <PopoverContent
+                        style={{ borderRadius: "0.8em" }}
+                        focusBorderColor="transparent" // Set focus border color to transparent
+                        _focus={{ boxShadow: "none" }}
                       >
-                        <img
-                          src={skill.image}
-                          alt={skill.name}
-                          className="w-2/3 h-2/3 object-contain rounded-xl"
-                        />
-                      </div>
-                    </div>
-                  </Tooltip>
+                        <PopoverArrow />
+                        <PopoverBody className="bg-slate-700 border border-transparent rounded-xl p-4">
+                          <Box
+                            display={"flex"}
+                            flexDirection={"column"}
+                            alignItems="center"
+                          >
+                            <Text
+                              fontSize={"small"}
+                              fontWeight="bold"
+                              mb={2}
+                              className="text-slate-100"
+                            >
+                              {skill.name}
+                            </Text>
+                            <HStack>
+                              <Text className="text-slate-300">
+                                {KnowledgeLevelToString(skill.knowledge)}
+                              </Text>
+
+                              <CircularProgress
+                                color="#444"
+                                trackColor="#00d0d8"
+                                thickness={12}
+                                size={"1.25em"}
+                                value={85 - (skill.knowledge + 1) * 25}
+                              />
+                            </HStack>
+                          </Box>
+                        </PopoverBody>
+                      </PopoverContent>
+                    </Popover>
+                  </div>
                 ))}
               </div>
             </div>

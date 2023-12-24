@@ -12,6 +12,8 @@ import {
   python,
   cplusplus,
   golang,
+  idf,
+  rafael,
 } from "../assets/images";
 import {
   car,
@@ -172,11 +174,11 @@ export const categories = [
 
 export const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
-    iconBg: "#accbe1",
-    date: "March 2020 - April 2021",
+    title: "Software Developer",
+    company_name: "IDF",
+    icon: idf,
+    iconBg: "#fff6aa",
+    date: "April 2021 - Present",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -185,11 +187,11 @@ export const experiences = [
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#fbc3bc",
-    date: "Jan 2021 - Feb 2022",
+    title: "Software Developer",
+    company_name: "Rafael",
+    icon: rafael,
+    iconBg: "#a2d2ff",
+    date: "August 2019 - April 2021",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -229,7 +231,7 @@ export const socialLinks = [
   {
     name: "LinkedIn",
     iconUrl: linkedIn,
-    link: "https://www.linkedin.com/in/YourLinkedInUsername",
+    link: "https://www.linkedin.com/in/ori-lazarovitch-782561224/",
   },
 ];
 

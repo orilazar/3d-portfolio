@@ -14,8 +14,12 @@ import typescript from "./typescript.png";
 import cplusplus from "./cplusplus.png";
 import python from "./python.png";
 import golang from "./golang.png";
+import idf from "./idf.png";
+import rafael from "./rafael.png";
 
 export {
+  idf,
+  rafael,
   golang,
   python,
   cplusplus,

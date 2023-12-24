@@ -1,23 +1,24 @@
 import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef, useState } from "react";
+import { useToast } from "@chakra-ui/react";
 
 import { Fox } from "../models";
 import useAlert from "../hooks/useAlert";
-import { Alert, Loader } from "../components";
+import { Loader } from "../components";
 
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState("idle");
+  const toast = useToast();
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
   };
 
-  const handleFocus = () => setCurrentAnimation("walk");
+  const handleFocus = () => setCurrentAnimation("walk.left");
   const handleBlur = () => setCurrentAnimation("idle");
 
   const handleSubmit = (e) => {
@@ -33,7 +34,7 @@ const Contact = () => {
           from_name: form.name,
           to_name: "Ori Lazarovitch",
           from_email: form.email,
-          to_email: "ori10122001+contact-through-portfolio@gmail.com",
+          to_email: "ori10122001+portfolio@gmail.com",
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
@@ -41,14 +42,15 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          showAlert({
-            show: true,
-            text: "Thank you for your message 😃",
-            type: "success",
+          toast({
+            title: "Message sent!",
+            description: "Thank you for your message 😃",
+            duration: 3000,
+            isClosable: true,
+            status: "success",
           });
 
           setTimeout(() => {
-            hideAlert(false);
             setCurrentAnimation("idle");
             setForm({
               name: "",
@@ -59,16 +61,18 @@ const Contact = () => {
         },
         (error) => {
           setLoading(false);
-          console.error(error);
+          console.error("ERROR", error);
           setCurrentAnimation("idle");
 
-          showAlert({
-            show: true,
-            text: "I didn't receive your message 😢",
-            type: "danger",
+          toast({
+            title: "Error occured!",
+            description: "I didn't receive your message 😢",
+            duration: 3000,
+            isClosable: true,
+            status: "warning",
           });
+
           setTimeout(() => {
-            hideAlert(false);
             setCurrentAnimation("idle");
           }, [3000]);
         }
@@ -77,8 +81,6 @@ const Contact = () => {
 
   return (
     <section className="relative flex lg:flex-row flex-col max-container">
-      {alert.show && <Alert {...alert} />}
-
       <div className="flex-1 min-w-[50%] flex flex-col dark">
         <h1 className="head-text">Get in Touch</h1>
 
@@ -157,7 +159,7 @@ const Contact = () => {
             <Fox
               currentAnimation={currentAnimation}
               position={[0.5, 0.5, 0.1]}
-              rotation={[12.65, -0.7, 0]}
+              rotation={[12.65, -0.8, 0]}
               scale={[0.5, 0.5, 0.5]}
             />
           </Suspense>
