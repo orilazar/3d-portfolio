@@ -42,7 +42,9 @@ export function Island({
     setIsRotating(true);
 
     // Calculate the clientX based on whether it's a touch event or a mouse event
-    const clientX = event.touches ? event.touches[0].clientX : event.clientX;
+    const clientX = event.touches
+      ? event.touches[0].clientX * 0.01
+      : event.clientX;
 
     // Store the current clientX position for reference
     lastX.current = clientX;
@@ -163,7 +165,7 @@ export function Island({
         case normalizedRotation >= 0.85 && normalizedRotation <= 1.3:
           setCurrentStage(3);
           break;
-        case normalizedRotation >= 2.4 && normalizedRotation <= 2.6:
+        case normalizedRotation >= 2.3 && normalizedRotation <= 2.7:
           setCurrentStage(2);
           break;
         case normalizedRotation >= 4.25 && normalizedRotation <= 4.75:

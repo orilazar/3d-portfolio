@@ -41,7 +41,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .head-text {
-    @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins text-slate-200;
+    @apply xl:text-5xl sm:text-5xl text-2xl font-semibold sm:leading-snug font-poppins text-slate-200;
   }
 
   .subhead-text {
@@ -198,4 +198,17 @@ body:has(.card[data-color="green"]:hover) {
   border: #fff;
   box-shadow: 0.6vmin 0.6vmin #fff, 1vmin 1vmin #d2e4ff, 1vmin 1vmin #d2e4ff,
     0.65vmin 1vmin #d2e4ff, 1vmin 0.65vmin #d2e4ff;
+}
+
+.diagonal-container {
+  overflow: hidden !important;
+  width: 100%; /* Adjust the width as needed */
+  height: 150px; /* Adjust the height as needed */
+}
+
+.diagonal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain image aspect ratio and cover the container */
+  opacity: 0.1;
 }

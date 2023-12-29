@@ -18,8 +18,16 @@ import idf from "./idf.png";
 import rafael from "./rafael.png";
 import adobexd from "./adobexd.png";
 import uxui from "./uxui.png";
+import binary1 from "./binary1.jpeg";
+import binary2 from "./binary2.jpeg";
+import binary3 from "./binary3.jpeg";
+import fox from "./fox.gif";
 
 export {
+  fox,
+  binary1,
+  binary2,
+  binary3,
   adobexd,
   uxui,
   idf,
