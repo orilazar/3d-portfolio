@@ -3,6 +3,9 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 
+import Lottie from "lottie-react";
+import animationData from "../assets/lottie/arrow_down_animation.json";
+
 import { experiences, categories, KnowledgeLevelToString } from "../constants";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
@@ -21,32 +24,33 @@ import {
 import { FaInfoCircle } from "react-icons/fa";
 import ScrollAppearComponent from "../components/common/ScrollAppearComponent";
 import WalkingPets from "../components/common/WalkingPets";
+import Expertise from "./Expertise";
 
 const About = () => {
   return (
     <div>
-      <section className="max-container">
-        <WalkingPets />
-        <h1 className="head-text">
+      <section className="max-container" id="about">
+        <h1 className="head-text text-center">
           Hi, I'm
           <span className="blue-gradient_text font-semibold drop-shadow">
             {" Ori Lazarovitch"}
           </span>
         </h1>
-        <div className="mt-5 flex flex-col gap-3 text-slate-300">
-          <p className="text-slate-300">
-            <strong>Software developer</strong> with{" "}
+        <div className="mt-5 flex flex-col gap-3 text-slate-300 ">
+          <p className="text-slate-300 text-center">
+            Software developer specializing in web development, Python and C#
+            {/* <strong>Software developer</strong> with{" "}
             <strong>5+ years of experience</strong> in programming.
             <br />
             specializing in web development, Python and C#.
-            <br />
-            <p className="text-slate-400/90">
+            <br /> */}
+            {/* <p className="text-slate-400/90">
               Highly motivated, organized, methodological worker, who’s always
               seeking to learn and improve myself and my environment. Proficient
               in a wide range of technologies and programming languages, keeping
               up with the latest advancements.
-            </p>
-            <a
+            </p> */}
+            {/* <a
               target="_blank"
               href="full_cv.pdf"
               rel="noopener noreferrer"
@@ -54,11 +58,19 @@ const About = () => {
             >
               View CV
               <FaArrowUpRightFromSquare className="ml-3" fontSize="0.85em" />
-            </a>
+            </a> */}
           </p>
         </div>
+        <div className="items-center flex justify-center">
+          <Lottie
+            animationData={animationData}
+            loop={true}
+            autoplay={true}
+            style={{ width: 110, height: 110 }} // Adjust the size as needed
+          />
+        </div>
 
-        <div className="py-10 flex flex-col">
+        {/* <div className="py-10 flex flex-col">
           <div className="flex items-baseline">
             <div className="flex items-baseline">
               <h3 className="subhead-text">My Skills</h3>
@@ -66,11 +78,11 @@ const About = () => {
                 Hover for more info <FaInfoCircle className="ml-2" />
               </p>
             </div>
-          </div>
+          </div> */}
 
-          {/* Skills */}
+        {/* Skills */}
 
-          <div className="mt-8 flex flex-col flex-wrap gap-8">
+        {/* <div className="mt-8 flex flex-col flex-wrap gap-8">
             {categories.map((category) => (
               <div key={category.name} className="text-slate-300">
                 <p className="mb-6 font-semibold font-poppins">
@@ -151,11 +163,12 @@ const About = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
+          </div> 
+        </div>*/}
+        <Expertise />
 
         <div className="py-16">
-          <h3 className="subhead-text">Work Experience.</h3>
+          <h3 className="subhead-text">Work Experience</h3>
           <div className="mt-5 flex flex-col gap-3 text-slate-300">
             <p>
               I've worked for different companies, leveling up my skills and
