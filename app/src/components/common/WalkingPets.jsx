@@ -32,7 +32,7 @@ const WalkingPets = () => {
         speed={0.18}
         msBetweenFrames={30}
         width={2.5}
-        startPosition={88}
+        startPosition={86}
       />
       <WalkingPet
         petSrc={pug}

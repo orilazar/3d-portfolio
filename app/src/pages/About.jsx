@@ -90,7 +90,7 @@ const About = () => {
                         <Popover
                           placement="top"
                           trigger="hover"
-                          openDelay={250}
+                          openDelay={300}
                           closeDelay={200}
                         >
                           <PopoverTrigger>
