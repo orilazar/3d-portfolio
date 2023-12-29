@@ -22,8 +22,16 @@ import binary1 from "./binary1.jpeg";
 import binary2 from "./binary2.jpeg";
 import binary3 from "./binary3.jpeg";
 import fox from "./fox.gif";
+import pug from "./pug.gif";
+import runningPug from "./runningPug.gif";
+import runningDog from "./runningDog.gif";
+import dog from "./dog.gif";
 
 export {
+  runningDog,
+  dog,
+  runningPug,
+  pug,
   fox,
   binary1,
   binary2,

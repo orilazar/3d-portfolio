@@ -6,6 +6,7 @@ import { useToast } from "@chakra-ui/react";
 import { Fox } from "../models";
 import useAlert from "../hooks/useAlert";
 import { Loader } from "../components";
+import WalkingPets from "../components/common/WalkingPets";
 
 const Contact = () => {
   const formRef = useRef();
@@ -84,13 +85,14 @@ const Contact = () => {
       className="relative flex lg:flex-row flex-col max-container"
       style={{ paddingBottom: "5em" }}
     >
+      <WalkingPets />
       <div className="flex-1 min-w-[50%] flex flex-col dark">
         <h1 className="head-text">Get in Touch</h1>
 
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="w-full flex flex-col gap-7 mt-14"
+          className="w-full flex flex-col gap-7 mt-12"
         >
           <label className="text-slate-200 font-semibold">
             Name

@@ -20,11 +20,13 @@ import {
 } from "@chakra-ui/react";
 import { FaInfoCircle } from "react-icons/fa";
 import ScrollAppearComponent from "../components/common/ScrollAppearComponent";
+import WalkingPets from "../components/common/WalkingPets";
 
 const About = () => {
   return (
     <div>
       <section className="max-container">
+        <WalkingPets />
         <h1 className="head-text">
           Hi, I'm
           <span className="blue-gradient_text font-semibold drop-shadow">
