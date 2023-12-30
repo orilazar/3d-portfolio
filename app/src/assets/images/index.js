@@ -26,8 +26,14 @@ import pug from "./pug.gif";
 import runningPug from "./runningPug.gif";
 import runningDog from "./runningDog.gif";
 import dog from "./dog.gif";
+import background1 from "./background1.jpg";
+import background2 from "./background2.jpg";
+import code from "./code.png";
 
 export {
+  code,
+  background1,
+  background2,
   runningDog,
   dog,
   runningPug,

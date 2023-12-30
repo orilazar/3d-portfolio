@@ -24,151 +24,82 @@ import {
 import { FaInfoCircle } from "react-icons/fa";
 import ScrollAppearComponent from "../components/common/ScrollAppearComponent";
 import WalkingPets from "../components/common/WalkingPets";
-import Expertise from "./Expertise";
+import Skills from "./Skills";
+import { background1 } from "../assets/images";
+import LightBall from "../components/common/LightBall/LightBall";
+import Cube from "../components/common/Cube/Cube";
 
-const About = () => {
+const About = ({ scrollToSkills }) => {
   return (
-    <div>
-      <section className="max-container" id="about">
-        <h1 className="head-text text-center">
-          Hi, I'm
-          <span className="blue-gradient_text font-semibold drop-shadow">
-            {" Ori Lazarovitch"}
-          </span>
-        </h1>
-        <div className="mt-5 flex flex-col gap-3 text-slate-300 ">
-          <p className="text-slate-300 text-center">
-            Software developer specializing in web development, Python and C#
-            {/* <strong>Software developer</strong> with{" "}
-            <strong>5+ years of experience</strong> in programming.
-            <br />
-            specializing in web development, Python and C#.
-            <br /> */}
-            {/* <p className="text-slate-400/90">
-              Highly motivated, organized, methodological worker, who’s always
-              seeking to learn and improve myself and my environment. Proficient
-              in a wide range of technologies and programming languages, keeping
-              up with the latest advancements.
-            </p> */}
-            {/* <a
-              target="_blank"
-              href="full_cv.pdf"
-              rel="noopener noreferrer"
-              className="text-blue-400/80 font-poppins font-semibold text-lg cursor-pointer flex items-baseline w-[fit-content] mt-1"
-            >
-              View CV
-              <FaArrowUpRightFromSquare className="ml-3" fontSize="0.85em" />
-            </a> */}
-          </p>
+    <section id="about">
+      <div
+        style={{
+          background: `
+        linear-gradient(0deg, rgba(30,30,30,1) 0%, rgba(30,50,80,1) 100%)`,
+        }}
+        className="w-full pt-20 h-screen"
+      >
+        <div
+          className="absolute top-[50vh] right-[38vw]"
+          style={{ zIndex: 1000 }}
+        >
+          <LightBall />
         </div>
-        <div className="items-center flex justify-center">
-          <Lottie
-            animationData={animationData}
-            loop={true}
-            autoplay={true}
-            style={{ width: 110, height: 110 }} // Adjust the size as needed
+
+        {/* Cubes */}
+        <div className="absolute left-[35vw] top-[45vh] w-[50vw]">
+          <Cube
+            scaleSize={0.3}
+            transformExtension="rotate(-15deg)"
+            classNameExtension="mt-[4em]"
+          />
+          <Cube
+            scaleSize={0.5}
+            transformExtension="rotate(-12deg)"
+            classNameExtension="mr-[4em] mt-[6em]"
+          />
+          <Cube
+            scaleSize={0.6}
+            transformExtension="rotate(-100deg)"
+            classNameExtension="mr-[28em]"
           />
         </div>
-
-        {/* <div className="py-10 flex flex-col">
-          <div className="flex items-baseline">
-            <div className="flex items-baseline">
-              <h3 className="subhead-text">My Skills</h3>
-              <p className="ml-4 text-slate-500 flex items-center flex-grow-1 font-poppins">
-                Hover for more info <FaInfoCircle className="ml-2" />
+        <div className="flex justify-between flex-col h-[74vh]">
+          <div>
+            <h1 className="head-text text-center">
+              Hi, I'm
+              <span className="blue-gradient_text font-semibold drop-shadow">
+                {" Ori Lazarovitch"}
+              </span>
+            </h1>
+            <div className="mt-5 flex flex-col gap-3 text-slate-300 ">
+              <p className="text-slate-300 text-center px-4">
+                Software developer specializing in web development, Python and
+                C#
               </p>
             </div>
-          </div> */}
+          </div>
 
-        {/* Skills */}
+          <button
+            onClick={scrollToSkills}
+            className="items-center flex justify-center"
+          >
+            <Lottie
+              animationData={animationData}
+              loop={true}
+              autoplay={true}
+              style={{ width: 110, height: 110 }} // Adjust the size as needed
+            />
+          </button>
+        </div>
+      </div>
 
-        {/* <div className="mt-8 flex flex-col flex-wrap gap-8">
-            {categories.map((category) => (
-              <div key={category.name} className="text-slate-300">
-                <p className="mb-6 font-semibold font-poppins">
-                  {category.name}
-                </p>
-                <div
-                  key={category.name}
-                  className="flex flex-wrap gap-3 text-slate-300"
-                >
-                  {category.items.map((skill, index) => (
-                    <ScrollAppearComponent animationTime={index + 1}>
-                      <div
-                        className="block-container w-20 h-20 mx-3 mb-4"
-                        key={skill.name}
-                      >
-                        <div className="btn-back btn-back-whole-black rounded-xl" />
-                        <Popover
-                          placement="top"
-                          trigger="hover"
-                          openDelay={300}
-                          closeDelay={200}
-                        >
-                          <PopoverTrigger>
-                            <Box
-                              className="btn-front rounded-xl flex justify-center items-center"
-                              boxShadow="0.5em 1em 1em #00000044"
-                            >
-                              <img
-                                src={skill.image}
-                                alt={skill.name}
-                                className="w-2/3 h-2/3 object-contain rounded-xl"
-                              />
-                            </Box>
-                          </PopoverTrigger>
-                          <PopoverContent
-                            style={{
-                              borderRadius: "0.8em",
-                              width: "fit-content",
-                            }}
-                            focusBorderColor="transparent" // Set focus border color to transparent
-                            _focus={{ boxShadow: "none" }}
-                          >
-                            <PopoverArrow />
-                            <PopoverBody className="bg-slate-700 border border-transparent rounded-xl p-4">
-                              <Box
-                                display={"flex"}
-                                flexDirection={"column"}
-                                alignItems="center"
-                              >
-                                <Text
-                                  fontSize={"small"}
-                                  fontWeight="bold"
-                                  mb={2}
-                                  className="text-slate-100 font-poppins"
-                                >
-                                  {skill.name}
-                                </Text>
-                                <HStack>
-                                  <Text className="text-slate-300 font-poppins">
-                                    {KnowledgeLevelToString(skill.knowledge)}
-                                  </Text>
+      {/* Skills */}
+      <div className="max-container">
+        <Skills />
 
-                                  <CircularProgress
-                                    color="#222"
-                                    trackColor="#11c0d8"
-                                    thickness={18}
-                                    size={"1.2em"}
-                                    value={85 - (skill.knowledge + 1) * 25}
-                                  />
-                                </HStack>
-                              </Box>
-                            </PopoverBody>
-                          </PopoverContent>
-                        </Popover>
-                      </div>
-                    </ScrollAppearComponent>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div> 
-        </div>*/}
-        <Expertise />
-
-        <div className="py-16">
-          <h3 className="subhead-text">Work Experience</h3>
+        <section id="experience" className="pt-16">
+          <h3 className="subhead-text">Experience</h3>
           <div className="mt-5 flex flex-col gap-3 text-slate-300">
             <p>
               I've worked for different companies, leveling up my skills and
@@ -193,7 +124,7 @@ const About = () => {
                     </div>
                   }
                   contentArrowStyle={{
-                    borderRightColor: "#ffffff22",
+                    borderRightColor: "#ffffff15",
                   }}
                   contentStyle={{
                     borderBottom: "0.5em",
@@ -202,7 +133,7 @@ const About = () => {
                     borderBottomColor: experience.iconBg,
                     boxShadow: "none",
                     color: "white",
-                    backgroundColor: "#ffffff22",
+                    backgroundColor: "#ffffff15",
                   }}
                 >
                   <div>
@@ -231,9 +162,9 @@ const About = () => {
               ))}
             </VerticalTimeline>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </section>
   );
 };
 

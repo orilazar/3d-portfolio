@@ -192,7 +192,7 @@ export const experiences = [
     title: "Software Developer",
     company_name: "Rafael",
     icon: rafael,
-    iconBg: "#a2d2ff",
+    iconBg: "#62b2df",
     date: "August 2019 - April 2021",
     points: [
       "Developing and maintaining a fullstack web application using React.js, Node and PosgreSQL.",

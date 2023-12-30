@@ -92,8 +92,8 @@ const Contact = () => {
       <div className="flex-1 min-w-[50%] flex flex-col dark">
         <h1 className="subhead-text">Get in Touch</h1>
         <div className="flex justify-between w-full">
-          <p className="text-slate-200 font-poppins font-semibold text-xl pr-[10%] w-[40%] flex justify-end flex-col">
-            Other
+          <p className="text-slate-200 font-poppins font-semibold text-xl w-[40%] flex justify-end flex-col ml-4">
+            Links
             <div className="mt-4">
               {socialLinks.map((link) => (
                 <Link key={link.name} to={link.link} target="_blank">
@@ -108,10 +108,10 @@ const Contact = () => {
                 target="_blank"
                 href="full_cv.pdf"
                 rel="noopener noreferrer"
-                className="text-blue-400/80 font-poppins font-semibold text-lg cursor-pointer flex items-baseline w-[fit-content] mt-1"
+                className="flex items-center mt-3 text-base text-blue-400/80 font-poppins cursor-pointer flex items-baseline w-[fit-content] mt-1"
               >
                 View CV
-                <FaArrowUpRightFromSquare className="ml-3" fontSize="1em" />
+                <FaArrowUpRightFromSquare className="ml-3" fontSize="0.8em" />
               </a>
             </div>
           </p>

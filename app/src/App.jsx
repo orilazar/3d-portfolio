@@ -7,7 +7,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 const App = () => {
   return (
     <ChakraProvider>
-      <main className="bg-zinc-900">
+      <main className="bg-zinc-900" style={{ overflow: "hidden" }}>
         {/* <BrightnessEffect /> */}
         <Router>
           <Navbar />
