@@ -128,6 +128,10 @@ body:has(.card[data-color="green"]:hover) {
   box-shadow: 0.5em 0 1em #ffffff26;
 }
 
+section {
+  min-height: 51vh;
+}
+
 .block-container .btn-back-red {
   background: linear-gradient(135deg, #ff4b1f -20%, #ff9068 120%);
 }

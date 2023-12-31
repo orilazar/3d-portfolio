@@ -44,7 +44,7 @@ const About = ({ scrollToSkills, sectionRefs }) => {
         </div>
 
         <div className="absolute top-[18vh] left-[18vw] z-1">
-          <LightBall />
+          {/* <LightBall /> */}
         </div>
 
         <div

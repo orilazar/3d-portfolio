@@ -17,7 +17,8 @@ const useScrollContext = () => {
 // Context provider component
 const ScrollProvider = ({ children }) => {
   // Number of sections (you can replace this with your actual logic)
-  const numberOfSections = 3;
+  const numberOfSections = 4;
+  const divSize = 70;
 
   // Create an array to store refs for each section
   const sectionRefs = Array.from({ length: numberOfSections }).map(() =>
@@ -51,11 +52,14 @@ const ScrollProvider = ({ children }) => {
     });
 
     setActiveSection(activeIndex);
-    setDivPosition(scrollPosition);
+    const top =
+      sectionRefs[activeIndex].current.getBoundingClientRect().top + divSize;
+    top > divSize && setDivPosition(top);
   };
 
   // Effect to attach the scroll event listener when the component mounts
   useEffect(() => {
+    setDivPosition(divSize);
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);

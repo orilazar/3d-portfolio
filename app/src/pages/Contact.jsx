@@ -5,25 +5,22 @@ import { Link } from "react-router-dom";
 
 import { socialLinks } from "../constants";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { useScrollContext } from "../components/contexts/ScrollContext";
 
 const Contact = () => {
+  const { sectionRefs } = useScrollContext();
   const formRef = useRef();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
-  const [currentAnimation, setCurrentAnimation] = useState("idle");
   const toast = useToast();
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
   };
 
-  const handleFocus = () => setCurrentAnimation("walk.left");
-  const handleBlur = () => setCurrentAnimation("idle");
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    setCurrentAnimation("hit");
 
     emailjs
       .send(
@@ -50,7 +47,6 @@ const Contact = () => {
           });
 
           setTimeout(() => {
-            setCurrentAnimation("idle");
             setForm({
               name: "",
               email: "",
@@ -61,7 +57,6 @@ const Contact = () => {
         (error) => {
           setLoading(false);
           console.error("ERROR", error);
-          setCurrentAnimation("idle");
 
           toast({
             title: "Error occured!",
@@ -70,10 +65,6 @@ const Contact = () => {
             isClosable: true,
             status: "warning",
           });
-
-          setTimeout(() => {
-            setCurrentAnimation("idle");
-          }, [3000]);
         }
       );
   };
@@ -83,6 +74,7 @@ const Contact = () => {
       className="relative flex lg:flex-row flex-col max-container"
       style={{ paddingBottom: "5em" }}
       id="contact"
+      ref={sectionRefs[3]}
     >
       <div className="flex-1 min-w-[50%] flex flex-col dark">
         <h1 className="subhead-text">Get in Touch</h1>
@@ -126,8 +118,6 @@ const Contact = () => {
                 required
                 value={form.name}
                 onChange={handleChange}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
               />
             </label>
             <label className="text-slate-200 font-semibold">
@@ -140,8 +130,6 @@ const Contact = () => {
                 required
                 value={form.email}
                 onChange={handleChange}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
               />
             </label>
             <label className="text-slate-200 font-semibold">
@@ -153,18 +141,10 @@ const Contact = () => {
                 placeholder="Write your message here"
                 value={form.message}
                 onChange={handleChange}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
               />
             </label>
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="btn"
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-            >
+            <button type="submit" disabled={loading} className="btn">
               {loading ? "Sending..." : "Submit"}
             </button>
           </form>
