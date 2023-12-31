@@ -18,7 +18,7 @@ const useScrollContext = () => {
 const ScrollProvider = ({ children }) => {
   // Number of sections (you can replace this with your actual logic)
   const numberOfSections = 4;
-  const divSize = 70;
+  const divSize = 65;
 
   // Create an array to store refs for each section
   const sectionRefs = Array.from({ length: numberOfSections }).map(() =>

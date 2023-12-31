@@ -97,7 +97,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="flex items-center mt-3 text-base text-blue-400/80 font-poppins cursor-pointer flex items-baseline w-[fit-content] mt-1"
               >
-                View CV
+                CV
                 <FaArrowUpRightFromSquare className="ml-3" fontSize="0.8em" />
               </a>
             </div>

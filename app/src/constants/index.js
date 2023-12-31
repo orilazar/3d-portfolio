@@ -115,6 +115,16 @@ export const KnowledgeLevelToString = (knowledgeLevel) =>
 export const experiences = [
   {
     title: "Software Developer",
+    company_name: "Rafael",
+    icon: rafael,
+    iconBg: "#62b2df",
+    date: "August 2019 - April 2021",
+    points: [
+      "Developing and maintaining a fullstack web application using React.js, Node and PosgreSQL.",
+    ],
+  },
+  {
+    title: "Software Developer",
     company_name: "IDF",
     icon: idf,
     iconBg: "#788044",
@@ -122,16 +132,6 @@ export const experiences = [
     points: [
       "Developing and maintaining a fullstack desktop application, using WPF, Python and MongoDB.",
       "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Software Developer",
-    company_name: "Rafael",
-    icon: rafael,
-    iconBg: "#62b2df",
-    date: "August 2019 - April 2021",
-    points: [
-      "Developing and maintaining a fullstack web application using React.js, Node and PosgreSQL.",
     ],
   },
 ];
