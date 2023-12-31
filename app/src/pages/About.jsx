@@ -43,10 +43,6 @@ const About = ({ scrollToSkills, sectionRefs }) => {
           />
         </div>
 
-        <div className="absolute top-[18vh] left-[18vw] z-1">
-          {/* <LightBall /> */}
-        </div>
-
         <div
           className="flex justify-around flex-col h-full z-30"
           style={{ transform: "translateZ(10em)" }}
