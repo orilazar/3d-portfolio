@@ -7,6 +7,7 @@
     inset -20px 0 300px #4baeff, 0 0 50px #ffffff, -10px 0 100px #00ffc8,
     10px 0 80px #66f;
   animation: bounce 1s infinite alternate ease-in-out;
+  z-index: 5;
 }
 
 @keyframes bounce {

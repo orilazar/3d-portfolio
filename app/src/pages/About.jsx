@@ -6,32 +6,17 @@ import {
 import Lottie from "lottie-react";
 import animationData from "../assets/lottie/arrow_down_animation.json";
 
-import { experiences, categories, KnowledgeLevelToString } from "../constants";
-import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { experiences } from "../constants";
 
 import "react-vertical-timeline-component/style.min.css";
-import {
-  PopoverArrow,
-  PopoverBody,
-  Box,
-  HStack,
-  CircularProgress,
-  Text,
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@chakra-ui/react";
-import { FaInfoCircle } from "react-icons/fa";
-import ScrollAppearComponent from "../components/common/ScrollAppearComponent";
-import WalkingPets from "../components/common/WalkingPets";
 import Skills from "./Skills";
-import { background1 } from "../assets/images";
 import LightBall from "../components/common/LightBall/LightBall";
 import Cube from "../components/common/Cube/Cube";
+import { useRef } from "react";
 
-const About = ({ scrollToSkills }) => {
+const About = ({ scrollToSkills, sectionRefs }) => {
   return (
-    <section id="about">
+    <section id="about" ref={sectionRefs[0]}>
       <div
         style={{
           background: `
@@ -39,13 +24,6 @@ const About = ({ scrollToSkills }) => {
         }}
         className="w-full pt-20 h-screen"
       >
-        <div
-          className="absolute top-[50vh] right-[38vw]"
-          style={{ zIndex: 1000 }}
-        >
-          <LightBall />
-        </div>
-
         {/* Cubes */}
         <div className="absolute left-[35vw] top-[45vh] w-[50vw]">
           <Cube
@@ -64,41 +42,50 @@ const About = ({ scrollToSkills }) => {
             classNameExtension="mr-[28em]"
           />
         </div>
-        <div className="flex justify-between flex-col h-[74vh]">
-          <div>
-            <h1 className="head-text text-center">
+
+        <div className="absolute top-[18vh] left-[18vw] z-1">
+          <LightBall />
+        </div>
+
+        <div
+          className="flex justify-around flex-col h-full z-30"
+          style={{ transform: "translateZ(10em)" }}
+        >
+          <div className="absolute top-[30%] left-[50%] translate-x-[-50%] w-full">
+            <h1 className="head-text text-center items-center">
               Hi, I'm
               <span className="blue-gradient_text font-semibold drop-shadow">
                 {" Ori Lazarovitch"}
               </span>
             </h1>
-            <div className="mt-5 flex flex-col gap-3 text-slate-300 ">
-              <p className="text-slate-300 text-center px-4">
+
+            <div className="mt-5 flex flex-col gap-3 text-slate-300">
+              <p className="text-slate-300 text-center px-4 font-poppins">
                 Software developer specializing in web development, Python and
                 C#
               </p>
+
+              <button
+                onClick={scrollToSkills}
+                className="items-center flex justify-center mt-8"
+              >
+                <Lottie
+                  animationData={animationData}
+                  loop={true}
+                  autoplay={true}
+                  style={{ width: 110, height: 110 }} // Adjust the size as needed
+                />
+              </button>
             </div>
           </div>
-
-          <button
-            onClick={scrollToSkills}
-            className="items-center flex justify-center"
-          >
-            <Lottie
-              animationData={animationData}
-              loop={true}
-              autoplay={true}
-              style={{ width: 110, height: 110 }} // Adjust the size as needed
-            />
-          </button>
         </div>
       </div>
 
       {/* Skills */}
       <div className="max-container">
-        <Skills />
+        <Skills sectionRef={sectionRefs[1]} />
 
-        <section id="experience" className="pt-16">
+        <section id="experience" className="pt-16" ref={sectionRefs[2]}>
           <h3 className="subhead-text">Experience</h3>
           <div className="mt-5 flex flex-col gap-3 text-slate-300">
             <p>

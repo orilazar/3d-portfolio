@@ -1,9 +1,5 @@
-import CTA from "./CTA";
-import Alert from "./Alert";
-import Loader from "./Loader";
+import BrightnessEffect from "./common/BrightnessEffect/BrightnessEffect.jsx";
 import Navbar from "./Navbar";
-import Footer from "./Footer";
-import HomeInfo from "./HomeInfo";
-import BrightnessEffect from "../components/common/BrightnessEffect/BrightnessEffect";
+import { useScrollContext, ScrollProvider } from "./contexts/ScrollContext.jsx";
 
-export { BrightnessEffect, CTA, Alert, Loader, Navbar, Footer, HomeInfo };
+export { BrightnessEffect, Navbar, useScrollContext, ScrollProvider };

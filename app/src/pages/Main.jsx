@@ -1,53 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 import About from "./About";
 import Contact from "./Contact";
-import { FaHome } from "react-icons/fa";
+import { Navbar, useScrollContext, ScrollProvider } from "../components";
+import Movable from "../components/common/Moveable/Movable";
 
 const Main = () => {
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const { sectionRefs, scrollToSection } = useScrollContext();
 
   return (
     <div>
-      <nav
-        className="fixed top-0 left-0 gap-4 flex bg-[rgba(100,140,190,0.2)] w-full py-2 pl-4"
-        style={{
-          zIndex: 10,
-          backdropFilter: "blur(0.33em)",
-          WebkitBackdropFilter: "blur(0.33em)",
-        }}
-      >
-        <button
-          className="text-sky-400 font-poppins"
-          onClick={() => scrollToSection("about")}
-        >
-          <FaHome />
-        </button>
-        <button
-          className="text-sky-400 font-poppins"
-          onClick={() => scrollToSection("skills")}
-        >
-          Skills
-        </button>
-        <button
-          className="text-sky-400 font-poppins"
-          onClick={() => scrollToSection("experience")}
-        >
-          Experience
-        </button>
-        <button
-          className="text-sky-400 font-poppins"
-          onClick={() => scrollToSection("contact")}
-        >
-          Contact
-        </button>
-      </nav>
-
-      <About scrollToSkills={() => scrollToSection("skills")} />
+      <Navbar />
+      <Movable sectionRefs={sectionRefs} />
+      <About
+        scrollToSkills={() => scrollToSection("skills")}
+        sectionRefs={sectionRefs}
+      />
 
       <Contact />
     </div>

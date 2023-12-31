@@ -1,0 +1,9 @@
+.movable-div {
+  position: fixed;
+  transition: top 1s ease; /* Add a smooth transition effect over 1 second */
+}
+
+.section {
+  height: 100vh;
+  /* Additional styling for sections if needed */
+}

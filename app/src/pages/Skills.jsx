@@ -1,8 +1,8 @@
 import React from "react";
 import { react } from "../assets/icons";
-import { code, cplusplus, csharp } from "../assets/images";
+import { code } from "../assets/images";
 
-const Skills = () => {
+const Skills = ({ sectionRef }) => {
   const skills = [
     {
       src: react,
@@ -24,7 +24,7 @@ const Skills = () => {
     },
   ];
   return (
-    <section id="skills">
+    <section id="skills" ref={sectionRef}>
       <div className="py-16">
         <h3 className="subhead-text">My Skills</h3>
       </div>
@@ -32,7 +32,10 @@ const Skills = () => {
       {/* React Cubes */}
       <div className="flex flex-wrap md:flex-no-wrap">
         {skills.map((skill) => (
-          <div className="flex-shrink-0 w-full lg:w-1/2 mb-4 lg:mb-0">
+          <div
+            className="flex-shrink-0 w-full lg:w-1/2 mb-4 lg:mb-0"
+            key={skill.firstLine}
+          >
             {/* Header */}
             <div className="flex items-center">
               <img src={skill.src} alt={skill.alt} className="h-14 mr-4" />

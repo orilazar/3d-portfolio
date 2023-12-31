@@ -1,13 +1,8 @@
 import emailjs from "@emailjs/browser";
-import { Canvas } from "@react-three/fiber";
-import { Suspense, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useToast } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-import { Fox } from "../models";
-import useAlert from "../hooks/useAlert";
-import { Loader } from "../components";
-import WalkingPets from "../components/common/WalkingPets";
 import { socialLinks } from "../constants";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
@@ -175,29 +170,6 @@ const Contact = () => {
           </form>
         </div>
       </div>
-
-      {/* <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
-        <Canvas
-          camera={{
-            position: [0, 0, 5],
-            fov: 65,
-            near: 0.1,
-            far: 1000,
-          }}
-        >
-          <directionalLight position={[0, 0, 1]} intensity={2} />
-          <ambientLight intensity={0.3} />
-
-          <Suspense fallback={<Loader />}>
-            <Fox
-              currentAnimation={currentAnimation}
-              position={[0.5, 0.5, 0.1]}
-              rotation={[12.65, -0.8, 0]}
-              scale={[0.5, 0.5, 0.5]}
-            />
-          </Suspense>
-        </Canvas>
-      </div> */}
     </section>
   );
 };

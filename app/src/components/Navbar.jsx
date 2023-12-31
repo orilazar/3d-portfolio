@@ -1,42 +1,52 @@
-import { NavLink, useLocation } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 
+import { useScrollContext } from "../components";
+
 const Navbar = () => {
-  const location = useLocation();
-  return location.pathname === "/" ? null : (
-    <header className="header">
-      <NavLink to="/">
-        <NavLink to="/" className="text-blue-400">
-          <FaHome className="w-6 h-6" />
-        </NavLink>
-      </NavLink>
-      <nav className="flex text-lg gap-7 font-medium">
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            isActive ? "text-blue-400" : "text-slate-500"
-          }
+  const { scrollToSection } = useScrollContext();
+
+  const navbarItems = [
+    {
+      title: "About",
+      sectionName: "about",
+      display: <FaHome />,
+    },
+    {
+      title: "Skills",
+      sectionName: "skills",
+      display: "Skills",
+    },
+    {
+      title: "Experience",
+      sectionName: "experience",
+      display: "Experience",
+    },
+    {
+      title: "Contact",
+      sectionName: "contact",
+      display: "Contact",
+    },
+  ];
+  return (
+    <nav
+      className="fixed top-0 left-0 gap-4 flex w-full py-2 pl-4 z-50"
+      style={{
+        background: `
+        linear-gradient(0deg, rgba(100,140,190,0.04) 0%, rgba(100,140,190,0.2) 100%)`,
+        backdropFilter: "blur(0.33em)",
+        WebkitBackdropFilter: "blur(0.33em)",
+      }}
+    >
+      {navbarItems.map((item) => (
+        <button
+          key={item.title}
+          className="text-sky-400 font-poppins"
+          onClick={() => scrollToSection(item.sectionName)}
         >
-          About
-        </NavLink>
-        {/* <NavLink
-          to="/projects"
-          className={({ isActive }) =>
-            isActive ? "text-blue-400" : "text-slate-500"
-          }
-        >
-          Projects
-        </NavLink> */}
-        <NavLink
-          to="/contact"
-          className={({ isActive }) =>
-            isActive ? "text-blue-400" : "text-slate-500"
-          }
-        >
-          Contact{" "}
-        </NavLink>
-      </nav>
-    </header>
+          {item.display}
+        </button>
+      ))}
+    </nav>
   );
 };
 
